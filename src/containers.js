@@ -1,12 +1,24 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ChoiceContext from './ChoiceContext';
-import { CheckOff, CheckOn } from './icons';
+import { CheckOff, CheckOn, RadioOff, RadioOn } from './icons';
 
 export const ChoiceItem = ({
   active, children,
 }) => {
-  const Icon = active ? CheckOn : CheckOff;
+  let Icon;
+  const { store } = useContext(ChoiceContext);
+  if (active) {
+    if (store.my.chooseOne) {
+      Icon = RadioOn;
+    } else {
+      Icon = CheckOn;
+    }
+  } else if (store.my.chooseOne) {
+    Icon = RadioOff;
+  } else {
+    Icon = CheckOff;
+  }
   return (
     <div className="picker__item" active={active}>
       <Icon />
@@ -38,7 +50,7 @@ export const ChoiceContainer = ({ children, Item }) => {
         const active = value.choices.some((choice) => store.my.comparator.isEqual(choice, option));
         const label = (typeof option === 'string') ? option : option.label;
         return (
-          <Item store={store} active={active} option={option} onClick={() => store.do.toggleChoice(option)}>
+          <Item store={store} active={active} option={option} onClick={() => store.do.chooseOption(option)}>
             {label}
           </Item>
         );

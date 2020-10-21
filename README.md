@@ -1,4 +1,4 @@
-# Picker
+# React-Picker
 
 Picker is a "multi choice management system" in the spirit of `react-table`; it allows 
 you to pick the visual display of the container, wrapper, and items however you want, 
@@ -17,6 +17,7 @@ and are the values of the `value` object in context.
 store.my.options {[string/Object]} -- either strings, or objects with a label property
 store.my.choices {[same types as options]} -- the selected items from options
 store.my.display {boolean} whether to show the options container
+store.my.chooseOne {boolean} if true, your choices are singlular ("radio button mode")
 ```
 
 ## Actions
@@ -27,10 +28,11 @@ These methods are available from the context
 store.do.setOptions([...]) update the options that can be displayed
 store.do.setChoices([...]) update the current choices
 store.do.toggleDisplay() show (or hide) the options
-store.do.toggleChoice(option) add (or remove) an option to the choices
+store.do.chooseOption(option) add (or remove) an option to the choices*
 store.do.addAll(store) select all options
 store.do.remAll(store) select no options/clear choices
 store.do.setComparator({isEqual}) define how identity is tested in your component
+* if chooseOne is true, chooseOption sets the choices to an array containing the new option (only).
 ```
 
 # the Picker Component
@@ -101,7 +103,7 @@ by a custom containers' UI.
 If you simply must change how the `ChoiceContainer` operates you can override it as a 
 property of Picker. Keep in mind you'll have to clone or in some other way affect the 
 operation of the stock ChoiceContainer, displaying the options and hooking onClick
-to the stores' `toggleChoice` action. 
+to the stores' `chooseOption` action. 
 
 ChoiceContainer is not a dropdown by default -- it's a "Push down" that appears below
 the children when its activated by setting display to true. You can change that by 

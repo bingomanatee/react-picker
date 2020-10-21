@@ -28,8 +28,22 @@ const Picker = (props) => {
       if (cSub) cSub.unsubscribe();
     };
   },
-
   []);
+
+  useEffect(() => {
+    if (!store) return;
+    if ('display' in props) {
+      if ((!!props.display) !== (!!store.my.display)) {
+        store.do.setDisplay(!!props.display);
+      }
+    }
+  }, [props.display]);
+
+  useEffect(() => {
+    if (store && Array.isArray(props.options)) {
+      store.do.setOptions(props.options);
+    }
+  }, [props.options]);
 
   if (!(store && value)) {
     return '';
@@ -53,10 +67,11 @@ Picker.propTypes = {
   })])),
   onChoices: PropTypes.func,
   onStore: PropTypes.func,
+  display: PropTypes.bool // optional -- allows for externnal show/hide of options
 };
 
 Picker.defaultProps = {
-  options: []
-}
+  options: [],
+};
 
 export default Picker;

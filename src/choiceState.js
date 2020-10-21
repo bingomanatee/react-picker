@@ -6,18 +6,30 @@ export default (props) => {
     options: props.options || [], // entire population
     choices: props.choices || [], // chosen items
     display: !!props.display,
-    comparator: { isEqual },
+    chooseOne: false,
+    comparator: {isEqual},
   }, {
     actions: {
-      toggleChoice(store, option) {
-        const isActive = store.my.choices.some((choice) => {
-          return store.my.comparator.isEqual(choice, option);
-        });
+      chooseOption(store, option) {
+        if (store.my.chooseOne) {
+          store.do.setChoices([option]);
+          return;
+        }
+        store.do.toggleOption(option);
+      },
+      toggleOption(store, option) {
+        const isActive = store.my.choices.some((choice) => store.my.comparator.isEqual(choice, option));
         if (isActive) {
-          store.do.setChoices(store.my.choices.filter((choice) => {
-            return !store.my.comparator.isEqual(choice, option);
-          }));
-        } else store.do.setChoices([...store.my.choices, option]);
+          if (store.my.chooseOne) {
+            store.do.setChoices([]);
+          } else {
+            store.do.setChoices(store.my.choices.filter((choice) => !store.my.comparator.isEqual(choice, option)));
+          }
+        } else if (store.my.chooseOne) {
+          store.do.setChoices([option]);
+        } else {
+          store.do.setChoices([...store.my.choices, option]);
+        }
       },
       toggleDisplay(store) {
         store.do.setDisplay(!store.my.display);
