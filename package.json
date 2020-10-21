@@ -1,6 +1,6 @@
 {
   "name": "@wonderlandlabs/react-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -39,6 +39,7 @@
     "eslint-plugin-react-hooks": "^2.1.1",
     "gitdocs": "^2.0.0",
     "rollup": "^1.22.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
