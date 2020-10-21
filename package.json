@@ -1,5 +1,5 @@
 {
-  "name": "@wonderlandlabs/picker",
+  "name": "@wonderlandlabs/react-picker",
   "version": "1.0.0",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",

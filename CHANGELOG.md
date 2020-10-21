@@ -1,3 +1,3 @@
 ## 1.0.0
 
-Basic control system
+Basic control system, components
