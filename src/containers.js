@@ -4,7 +4,7 @@ import ChoiceContext from './ChoiceContext';
 import { CheckOff, CheckOn, RadioOff, RadioOn } from './icons';
 
 export const ChoiceItem = ({
-  active, children,
+  active, children, onClick
 }) => {
   let Icon;
   const { store } = useContext(ChoiceContext);
@@ -20,7 +20,7 @@ export const ChoiceItem = ({
     Icon = CheckOff;
   }
   return (
-    <div className="picker__item" active={active}>
+    <div className="picker__item" active={active} onClick={onClick}>
       <Icon />
       <label>{children}</label>
     </div>

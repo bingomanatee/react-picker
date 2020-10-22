@@ -6,8 +6,8 @@ export default (props) => {
     options: props.options || [], // entire population
     choices: props.choices || [], // chosen items
     display: !!props.display,
-    chooseOne: false,
-    comparator: {isEqual},
+    chooseOne: !!props.chooseOne,
+    comparator: { isEqual },
   }, {
     actions: {
       chooseOption(store, option) {

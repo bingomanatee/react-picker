@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -30,6 +32,8 @@ const Picker = (props) => {
   },
   []);
 
+  const { display, options } = props;
+
   useEffect(() => {
     if (!store) return;
     if ('display' in props) {
@@ -37,13 +41,13 @@ const Picker = (props) => {
         store.do.setDisplay(!!props.display);
       }
     }
-  }, [props.display]);
+  }, [display]);
 
   useEffect(() => {
     if (store && Array.isArray(props.options)) {
       store.do.setOptions(props.options);
     }
-  }, [props.options]);
+  }, [options]);
 
   if (!(store && value)) {
     return '';
@@ -67,7 +71,9 @@ Picker.propTypes = {
   })])),
   onChoices: PropTypes.func,
   onStore: PropTypes.func,
-  display: PropTypes.bool // optional -- allows for externnal show/hide of options
+  display: PropTypes.bool,
+  chooseOne: PropTypes.bool,
+  children: PropTypes.any,
 };
 
 Picker.defaultProps = {
