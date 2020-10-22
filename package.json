@@ -1,6 +1,6 @@
 {
   "name": "@wonderlandlabs/react-picker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.1.1",
     "gitdocs": "^2.0.0",
+    "react-is": "^17.0.0",
     "rollup": "^1.22.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-bundle-size": "^1.0.3",
@@ -50,5 +51,5 @@
   },
   "author": "David Edelhart",
   "license": "MIT",
-  "repository": "https://github.com/bingomanatee/looking_glass_engine"
+  "repository": "https://github.com/bingomanatee/react-picker"
 }
