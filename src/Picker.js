@@ -32,7 +32,9 @@ const Picker = (props) => {
   },
   []);
 
-  const { display, options } = props;
+  const {
+    display, options, comparator, filterOptions,
+  } = props;
 
   useEffect(() => {
     if (!store) return;
@@ -41,20 +43,31 @@ const Picker = (props) => {
         store.do.setDisplay(!!props.display);
       }
     }
-  }, [display]);
+  }, [display, store]);
 
   useEffect(() => {
     if (store && Array.isArray(props.options)) {
       store.do.setOptions(props.options);
     }
-  }, [options]);
+  }, [options, store]);
+
+  useEffect(() => {
+    if (store && (typeof comparator === 'function')) {
+      store.do.setComparator(comparator);
+    }
+  }, [comparator, store]);
+
+  useEffect(() => {
+    if (store && (typeof filterOptions === 'function')) {
+      store.do.setFilterOptions(filterOptions);
+    }
+  }, [filterOptions, store]);
+
+  const { ChoiceContainer, ChoiceItem } = { ...defaultContainers, ...props };
 
   if (!(store && value)) {
     return '';
   }
-
-  const { ChoiceContainer, ChoiceItem } = { ...defaultContainers, ...props };
-
   return (
     <ChoiceContext.Provider value={{ value, store }}>
       {props.children}
@@ -73,6 +86,8 @@ Picker.propTypes = {
   onStore: PropTypes.func,
   display: PropTypes.bool,
   chooseOne: PropTypes.bool,
+  filterOptions: PropTypes.func,
+  comparator: PropTypes.func,
   children: PropTypes.any,
 };
 

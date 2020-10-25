@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ChoiceContext from './ChoiceContext';
-import { CheckOff, CheckOn, RadioOff, RadioOn } from './icons';
+import {
+  CheckOff, CheckOn, RadioOff, RadioOn,
+} from './icons';
 
 export const ChoiceItem = ({
-  active, children, onClick
+  active, children, onClick,
 }) => {
   let Icon;
   const { store } = useContext(ChoiceContext);
@@ -32,7 +34,7 @@ ChoiceItem.propTypes = {
   children: PropTypes.elementType,
 };
 
-export const ChoiceContainer = ({ children, Item }) => {
+export const ChoiceContainer = ({ Item }) => {
   const { value, store } = useContext(ChoiceContext);
 
   if (!value) return '';
@@ -44,10 +46,12 @@ export const ChoiceContainer = ({ children, Item }) => {
   if (!Item) {
     Item = ChoiceItem;
   }
+  const filteredOptions = store.my.filterOptions(value.options);
+
   return (
     <section className="picker__container">
-      {value.options.map((option) => {
-        const active = value.choices.some((choice) => store.my.comparator.isEqual(choice, option));
+      {filteredOptions.map((option) => {
+        const active = value.choices.some((choice) => store.my.comparator(choice, option));
         const label = (typeof option === 'string') ? option : option.label;
         return (
           <Item store={store} active={active} option={option} onClick={() => store.do.chooseOption(option)}>

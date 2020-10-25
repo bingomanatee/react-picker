@@ -18,15 +18,80 @@ store.my.options {[string/Object]} -- either strings, or objects with a label pr
 store.my.choices {[same types as options]} -- the selected items from options
 store.my.display {boolean} whether to show the options container
 store.my.chooseOne {boolean} if true, your choices are singlular ("radio button mode")
+store.my.comprator {function} determines if a choice is equivalent to a given option. 
+store.my.optionsFilter {function} returns options in a new array;
+store.my.optionsToChoice {function} converts an option to a storeable choice
 ```
+
+each `my` item has a pass-through function -- `do.setOptions`, `do.setChoices`, etc. 
+
+### a word on optionsFilter
+
+all options pass through optionsFilter before they are displayed. By default, it 
+returns the options as stored. You can add an optionsFilter to:
+ 
+* sort the options alphabetically
+* respond to autocomplete
+* float selected options to the top (or out). 
+* enable pagination or deep-filtering with external selection
+
+The optionsFilter doesn't actually change the stored options *or* the stored chosen items.
+It is purely a display mechanic. *do not mutate the options themselves* 
+inside the optionsFilter.
+
+### choices and options
+
+by default elected are stored as choices. 
+> An option is active when one (or more) value in the choices is matches that option. 
+
+The language here is important. *matches* is determined by the comparator -- by default, `lodash.isEqual`.
+So for instance, if you store an object, `{id: 100, name: 'Bob'}` in the choices and
+have a different object in the options list, `{name: 'Bob', id: 100}`, the default comparator
+will flag that option as active. 
+
+#### getting tricky with optionToChoice
+
+In some scenarios you may want to store choices in a format different from the options. 
+
+if you want for instance you can store the id of an options as a choice. 
+
+Say you have this as options: 
+
+```
+[
+  {id: 1, name: 'Bob'},
+  {id: 2, name: 'Sue'},
+  {id: 3, name: 'Thuy'},
+  {id: 4, name: 'Mohammed'}
+]
+
+```
+
+you might want the choices to be a list of the ids - so you set the optionToChoice to:
+
+```
+({id}) => id
+```
+
+then if you click on the first two options choice becomes:
+
+```
+[1, 2] 
+```
+
+when optionsToChoice is not the identity function, then:
+
+> An option is active when for one of the choices,
+> store.my.comparator(choice, store.my.optionsToChoice(option)) is true.
+
+
 
 ## Actions
 
-These methods are available from the context
+Actions are methods available from the store that enable changes of the store's content. 
 
 ```
-store.do.setOptions([...]) update the options that can be displayed
-store.do.setChoices([...]) update the current choices
+store.do.set[myProperty](value) ... setter for each property of the store (my).
 store.do.toggleDisplay() show (or hide) the options
 store.do.chooseOption(option) add (or remove) an option to the choices*
 store.do.addAll(store) select all options
@@ -34,6 +99,9 @@ store.do.remAll(store) select no options/clear choices
 store.do.setComparator({isEqual}) define how identity is tested in your component
 * if chooseOne is true, chooseOption sets the choices to an array containing the new option (only).
 ```
+
+None of these actions has useful return values; their function is to 
+update the state, like a redux action. 
 
 # the Picker Component
 
