@@ -123,7 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603785004575</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="events">
+      <created>1603785371680</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603785371681</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix event">
+      <created>1603785462449</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603785462449</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +174,9 @@
     <MESSAGE value="fixed optionsFilter name error" />
     <MESSAGE value="refactored events; being noisy for now" />
     <MESSAGE value="caps" />
-    <option name="LAST_COMMIT_MESSAGE" value="caps" />
+    <MESSAGE value="events" />
+    <MESSAGE value="fix event" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix event" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
