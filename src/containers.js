@@ -46,7 +46,7 @@ export const ChoiceContainer = ({ Item }) => {
   if (!Item) {
     Item = ChoiceItem;
   }
-  const filteredOptions = store.my.filterOptions(value.options);
+  const filteredOptions = store.my.optionsFilter(value.options);
 
   return (
     <section className="picker__container">

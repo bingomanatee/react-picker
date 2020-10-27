@@ -2,15 +2,22 @@ import { ValueStoreObject, ValueStream } from '@wonderlandlabs/looking-glass-eng
 import isEqual from 'lodash.isequal';
 import listenForPointers from './listenForPointers';
 
+const f = (target, name, defaultValue) => {
+  if (target && typeof target[name] === 'function') {
+    return target[name];
+  }
+  return defaultValue;
+};
+
 export default (props = {}) => {
   const state = new ValueStoreObject({
     options: props.options || [], // entire population
     choices: props.choices || [], // chosen items
     display: !!props.display,
     chooseOne: !!props.chooseOne,
-    comparator: isEqual, // will be superseded by stream
-    optionsFilter: (list) => ([...list]), // will be superseded by stream
-    optionToChoice: (option) => option, // if you want the choice to be different than the options
+    comparator: f(props, 'comparator', isEqual), // will be superseded by stream
+    optionsFilter: f(props, 'optionsFilter', (list) => ([...list])), // will be superseded by stream
+    optionToChoice: f(props, 'optionsToChoice', (option) => option), // if you want the choice to be different than the options
 
     // these are touch trackers; used only if listenToTouch is true:
     listeningForPointers: false,
@@ -82,16 +89,6 @@ export default (props = {}) => {
     return value;
   });
   state.addStream('optionToChoice', optionToChoice);
-
-  if (props.optionToChoice) {
-    state.do.setOptionToChoice(props.optionToChoice);
-  }
-  if (props.comparator) {
-    state.do.setComparator(props.comparator);
-  }
-  if (props.choices) {
-    state.do.setChoices(props.choices);
-  }
 
   if (props.listenForPointers) {
     listenForPointers(state);

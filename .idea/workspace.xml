@@ -10,14 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/listenForTouch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/choiceState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/choiceState.js" afterDir="false" />
-    </list>
+    <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603626455314</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added listenForPointers; stopping pointerDown events from percolating outside of Picker.">
+      <created>1603782966984</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603782966984</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +128,8 @@
     <MESSAGE value="instituted chooseOne mode." />
     <MESSAGE value="got rollup to play nice in React" />
     <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding testing; introduced options filtering/ optionsToChoice" />
+    <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
+    <option name="LAST_COMMIT_MESSAGE" value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
