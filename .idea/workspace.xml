@@ -12,11 +12,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/public/check-off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/public/check-off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/public/check-on.svg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/public/check-on.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/public/checkSymbols.sketch" beforeDir="false" afterPath="$PROJECT_DIR$/demo/public/checkSymbols.sketch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/public/radio-off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/public/radio-off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/public/radio-on.svg" beforeDir="false" afterPath="$PROJECT_DIR$/demo/public/radio-on.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/choiceState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603789084045</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="work on docs">
+      <created>1603798812376</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603798812376</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,21 +208,22 @@
     <MESSAGE value="fix event" />
     <MESSAGE value="adding store to optionsFilter" />
     <MESSAGE value="cleanup and key" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup and key" />
+    <MESSAGE value="work on docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on docs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1258" y="640" key="Github.ShareDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603302640400" />
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2" timestamp="1603789087217">
+    <state x="910" y="431" key="Vcs.Push.Dialog.v2" timestamp="1603798822869">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603789087217" />
-    <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603796319948">
+    <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603798822869" />
+    <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603798119459">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603796319948" />
+    <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603798119459" />
     <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603253628180">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>

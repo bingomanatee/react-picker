@@ -29,6 +29,7 @@ const Picker = (props) => {
     return () => {
       sub.unsubscribe();
       if (cSub) cSub.unsubscribe();
+      newStore.complete();
     };
   },
   []);
@@ -72,7 +73,7 @@ const Picker = (props) => {
   return (
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
-        {props.children}
+        {(typeof props.children === 'function') ? props.children({ value, store }) : props.children}
         <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />
       </StopEvents>
     </ChoiceContext.Provider>
