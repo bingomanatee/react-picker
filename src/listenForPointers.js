@@ -52,7 +52,7 @@ export default (state) => {
     }
   };
 
-  document.addEventListener('pointerDown', onPointerDown, false);
+  document.addEventListener('pointerdown', onPointerDown, false);
   document.addEventListener('pointermove', onPointerMove, false);
   document.addEventListener('pointerend', onPointerEnd, false);
 
