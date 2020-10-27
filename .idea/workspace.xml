@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/icons/checkSymbols.sketch" beforeDir="false" afterPath="$PROJECT_DIR$/icons/checkSymbols.sketch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structure.svg" beforeDir="false" afterPath="$PROJECT_DIR$/structure.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -176,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603821611054</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added structure diagram">
+      <created>1603825436409</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603825436409</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,17 +230,18 @@
     <MESSAGE value="cleanup and key" />
     <MESSAGE value="work on docs" />
     <MESSAGE value="updated icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated icons" />
+    <MESSAGE value="added structure diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="added structure diagram" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1258" y="640" key="Github.ShareDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603302640400" />
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2" timestamp="1603821617500">
+    <state x="910" y="431" key="Vcs.Push.Dialog.v2" timestamp="1603825440853">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603821617500" />
+    <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
     <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603798119459">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
