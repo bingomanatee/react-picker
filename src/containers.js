@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import isEqual from 'lodash.isequal';
 import ChoiceContext from './ChoiceContext';
 import {
   CheckOff, CheckOn, RadioOff, RadioOn,
@@ -46,15 +47,23 @@ export const ChoiceContainer = ({ Item }) => {
   if (!Item) {
     Item = ChoiceItem;
   }
-  const filteredOptions = store.my.optionsFilter(value.options, store);
+
+  const [filteredOptions, setFO] = useState(value.options);
+
+  useEffect(() => {
+    const nextFO = store.my.optionsFilter(value.options, store);
+    if (!isEqual(nextFO, filteredOptions)) {
+      setFO(nextFO);
+    }
+  }, [value, store.my.optionsFilter, value.options]);
 
   return (
     <section className="picker__container">
-      {filteredOptions.map((option) => {
+      {filteredOptions.map((option, i) => {
         const active = value.choices.some((choice) => store.my.comparator(choice, option));
         const label = (typeof option === 'string') ? option : option.label;
         return (
-          <Item store={store} active={active} option={option} onClick={() => store.do.chooseOption(option)}>
+          <Item key={`${label}_${i}`} store={store} active={active} option={option} onClick={() => store.do.chooseOption(option)}>
             {label}
           </Item>
         );

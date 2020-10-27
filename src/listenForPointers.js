@@ -3,10 +3,8 @@ const maxDuration = 4 * 1000;
 
 export default (state) => {
   if (!document && document.addEventListener) {
-    console.log('cannot listen for events - no document');
     return;
   }
-  console.log('listening for pointer events: ', state);
 
   const pointers = new Map();
   state.do.setListeningForPointers(true);
@@ -17,7 +15,6 @@ export default (state) => {
       clientX, clientY, pointerId, at: Date.now(),
     };
     pointers.set(pointerId, newPointer);
-    console.log('created', newPointer);
 
     setTimeout(() => pointers.delete(clientX), maxDuration);
   };
@@ -32,7 +29,6 @@ export default (state) => {
 
     const dx = Math.abs(clientX - storedPointer.clientX);
     const dy = Math.abs(clientY - storedPointer.clientY);
-    console.log('moved ', dx, dy, 'for pointer ', storedPointer);
 
     if (Math.max(dx, dy) > moveThreshold) {
       storedPointer.dragging = true;
@@ -45,7 +41,6 @@ export default (state) => {
     const storedPointer = pointers.get(pointerId);
     if (storedPointer) {
       if (!storedPointer.dragging) {
-        console.log('closing because of pointer end: ', storedPointer);
         state.do.setDisplay(false);
       }
       pointers.delete(pointerId);
