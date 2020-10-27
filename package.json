@@ -1,6 +1,6 @@
 {
   "name": "@wonderlandlabs/react-picker",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",
   "module": "es/index.js",
