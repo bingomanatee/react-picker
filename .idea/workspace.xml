@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603782966984</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed optionsFilter name error">
+      <created>1603783947227</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603783947227</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +136,8 @@
     <MESSAGE value="got rollup to play nice in React" />
     <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
     <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
-    <option name="LAST_COMMIT_MESSAGE" value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
+    <MESSAGE value="fixed optionsFilter name error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed optionsFilter name error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
@@ -140,10 +148,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603304092802" />
-    <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603421592469">
+    <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603783498582">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603421592469" />
+    <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603783498582" />
     <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603253628180">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
