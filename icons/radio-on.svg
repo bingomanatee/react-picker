@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>radio-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-306.000000, -255.000000)">
+            <g id="radio-dot" transform="translate(307.000000, 256.000000)" fill="#FFFFFF" stroke="#D6D6D6" stroke-width="2">
+                <circle id="Oval" cx="11" cy="11" r="10"></circle>
+            </g>
+            <path d="M326.733514,260.311346 C327.819147,261.726748 328.568456,263.413664 328.861982,265.252635 L317.49505,276.61927 L313.959517,273.083736 L314.325698,272.717355 L308.454186,266.846651 L311.98972,263.311117 L317.861231,269.181821 Z" id="Combined-Shape" fill="#417505"></path>
+        </g>
+    </g>
+</svg>
