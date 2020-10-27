@@ -8,5 +8,6 @@ tuning and evaluating intial version
 
 * allow filtering of options
 * expanding pass-throughs to store
-* allowing opitonFiltering, optionToChoice for greater
+* allowing optionFiltering, optionToChoice for greater
   flexibility
+* allowing for auto-closing when click outside

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import ChoiceContext from './ChoiceContext';
 import choiceState from './choiceState';
+import StopEvents from './StopEvents';
 
 import * as defaultContainers from './containers';
 
@@ -70,8 +71,10 @@ const Picker = (props) => {
   }
   return (
     <ChoiceContext.Provider value={{ value, store }}>
-      {props.children}
-      <ChoiceContainer Item={ChoiceItem} />
+      <StopEvents>
+        {props.children}
+        <ChoiceContainer Item={ChoiceItem} />
+      </StopEvents>
     </ChoiceContext.Provider>
   );
 };

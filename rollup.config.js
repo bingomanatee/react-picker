@@ -7,6 +7,7 @@ import * as reactDom from 'react-dom';
 import * as reactIs from 'react-is';
 import * as propTypes from 'prop-types';
 import pkg from './package.json';
+import bundleSize from 'rollup-plugin-bundle-size';
 
 module.exports = {
   input: 'src/index.js',
@@ -25,6 +26,7 @@ module.exports = {
       },
     }),
     terser(),
+    bundleSize()
   ],
   external: [
     ...Object.keys(pkg.dependencies || {}),

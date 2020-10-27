@@ -11,15 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/listenForTouch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/choiceState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/addTwo.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/choiceState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/choiceState.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +88,28 @@
       <option name="project" value="LOCAL" />
       <updated>1603345938775</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding testing; introduced options filtering/ optionsToChoice">
+      <created>1603626455314</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603626455314</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -113,7 +127,8 @@
     <MESSAGE value="documentation of the Picker components; cleanup and prep for v1 release" />
     <MESSAGE value="instituted chooseOne mode." />
     <MESSAGE value="got rollup to play nice in React" />
-    <option name="LAST_COMMIT_MESSAGE" value="got rollup to play nice in React" />
+    <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding testing; introduced options filtering/ optionsToChoice" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">

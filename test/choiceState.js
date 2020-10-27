@@ -60,8 +60,6 @@ tap.test(p.name, (suite) => {
 
         bao.end();
       });
-
-
       mc.end();
     });
     cs.test('multi-choice by ID', (mc) => {
@@ -94,8 +92,6 @@ tap.test(p.name, (suite) => {
 
         bao.end();
       });
-
-
       mc.end();
     });
 

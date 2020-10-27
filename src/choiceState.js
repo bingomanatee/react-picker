@@ -1,6 +1,6 @@
 import { ValueStoreObject, ValueStream } from '@wonderlandlabs/looking-glass-engine';
 import isEqual from 'lodash.isequal';
-
+import listenForPointers from './listenForPointers';
 
 export default (props = {}) => {
   const state = new ValueStoreObject({
@@ -11,6 +11,9 @@ export default (props = {}) => {
     comparator: isEqual, // will be superseded by stream
     optionsFilter: (list) => ([...list]), // will be superseded by stream
     optionToChoice: (option) => option, // if you want the choice to be different than the options
+
+    // these are touch trackers; used only if listenToTouch is true:
+    listeningForPointers: false,
   }, {
     actions: {
       chooseOption(store, option) {
@@ -89,5 +92,11 @@ export default (props = {}) => {
   if (props.choices) {
     state.do.setChoices(props.choices);
   }
+
+  if (props.listenForPointers) {
+    listenForPointers(state);
+    state.do.setListeningForTouch(true);
+  }
+
   return state;
 };
