@@ -35,7 +35,13 @@ ChoiceItem.propTypes = {
   children: PropTypes.elementType,
 };
 
-export const ChoiceContainer = ({ Item }) => {
+export const ChoiceMenu = ({ children }) => (
+  <section className="picker__container">
+    {children}
+  </section>
+);
+
+export const ChoiceContainer = ({ Item, ChoiceMenu }) => {
   const { value, store } = useContext(ChoiceContext);
 
   if (!value) return '';
@@ -48,27 +54,24 @@ export const ChoiceContainer = ({ Item }) => {
     Item = ChoiceItem;
   }
 
-  const [filteredOptions, setFO] = useState(value.options);
-
-  useEffect(() => {
-    const nextFO = store.my.optionsFilter(value.options, store);
-    if (!isEqual(nextFO, filteredOptions)) {
-      setFO(nextFO);
-    }
-  }, [value, store.my.optionsFilter, value.options]);
-
   return (
-    <section className="picker__container">
-      {filteredOptions.map((option, i) => {
+    <ChoiceMenu>
+      {store.my.optionsFilter(value.options, value, store).map((option, i) => {
         const active = value.choices.some((choice) => store.my.comparator(choice, option));
-        const label = (typeof option === 'string') ? option : option.label;
+        const label = store.my.optionToLabel(option, i, store);
         return (
-          <Item key={`${label}_${i}`} store={store} active={active} option={option} onClick={() => store.do.chooseOption(option)}>
+          <Item
+            key={`${label}_${i}`}
+            store={store}
+            active={active}
+            option={option}
+            onClick={() => store.do.chooseOption(option)}
+          >
             {label}
           </Item>
         );
       })}
-    </section>
+    </ChoiceMenu>
   );
 };
 

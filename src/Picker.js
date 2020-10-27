@@ -64,7 +64,7 @@ const Picker = (props) => {
     }
   }, [filterOptions, store]);
 
-  const { ChoiceContainer, ChoiceItem } = { ...defaultContainers, ...props };
+  const { ChoiceContainer, ChoiceMenu, ChoiceItem } = { ...defaultContainers, ...props };
 
   if (!(store && value)) {
     return '';
@@ -73,7 +73,7 @@ const Picker = (props) => {
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
         {props.children}
-        <ChoiceContainer Item={ChoiceItem} />
+        <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />
       </StopEvents>
     </ChoiceContext.Provider>
   );
@@ -82,6 +82,7 @@ const Picker = (props) => {
 Picker.propTypes = {
   ChoiceContainer: PropTypes.elementType,
   ChoiceItem: PropTypes.elementType,
+  ChoiceMenu: PropTypes.elementType,
   options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
     label: PropTypes.string,
   })])),
@@ -91,6 +92,8 @@ Picker.propTypes = {
   chooseOne: PropTypes.bool,
   filterOptions: PropTypes.func,
   comparator: PropTypes.func,
+  optionToLabel: PropTypes.func,
+  optionToChoice: PropTypes.func,
   children: PropTypes.any,
 };
 
