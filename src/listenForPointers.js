@@ -39,7 +39,7 @@ export default (state) => {
     }
   };
 
-  const onPointerEnd = (state, event) => {
+  const onPointerEnd = (event) => {
     const { pointerId } = event;
 
     const storedPointer = pointers.get(pointerId);
