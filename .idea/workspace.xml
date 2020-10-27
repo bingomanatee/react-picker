@@ -116,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603784876372</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="caps">
+      <created>1603785004575</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603785004575</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +159,8 @@
     <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
     <MESSAGE value="fixed optionsFilter name error" />
     <MESSAGE value="refactored events; being noisy for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored events; being noisy for now" />
+    <MESSAGE value="caps" />
+    <option name="LAST_COMMIT_MESSAGE" value="caps" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">

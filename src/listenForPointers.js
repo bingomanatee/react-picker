@@ -54,7 +54,7 @@ export default (state) => {
 
   document.addEventListener('pointerdown', onPointerDown, false);
   document.addEventListener('pointermove', onPointerMove, false);
-  document.addEventListener('pointerend', onPointerEnd, false);
+  document.addEventListener('pointerup', onPointerEnd, false);
 
   // cancel listeners on state completion
   state.subscribe(() => {}, () => {},
