@@ -1,6 +1,6 @@
 {
   "name": "@wonderlandlabs/react-picker",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -15,7 +15,8 @@
     "test": "tap test test/* -R=base",
     "testo": "TAP_ONLY=1 tap test test/* -R=base",
     "build": "node_modules/rollup/dist/bin/rollup -c='rollup.config.js'",
-    "doc": "gitdocs serve"
+    "doc": "gitdocs serve",
+    "icons": "npx @svgr/cli -d src/icons icons"
   },
   "dependencies": {
     "@wonderlandlabs/looking-glass-engine": "^3.3.5",
