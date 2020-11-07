@@ -1,6 +1,5 @@
 import { ValueStoreObject, ValueStream } from '@wonderlandlabs/looking-glass-engine';
 import isEqual from 'lodash.isequal';
-import listenForPointers from './listenForPointers';
 
 const defaultOptionToLabel = (option) => {
   if (typeof option === 'string' || typeof option === 'number') return option;
@@ -30,15 +29,10 @@ export default (props = {}) => {
     display: !!props.display,
     chooseOne: !!props.chooseOne,
     comparator,
-    // will be superseded by stream
     optionsFilter,
-    // will be superseded by stream
     optionToChoice,
-    // will be overridden by streams
     optionToLabel,
-
-    // these are touch trackers; used only if listenToTouch is true:
-    listeningForPointers: false,
+    closeOnClick: !!props.closeOnClick,
   }, {
     actions: {
       /**
@@ -95,43 +89,6 @@ export default (props = {}) => {
       },
     },
   });
-
-  /**
-   * create streams that reject bad values in which to store selected columns
-   */
-
-  const compStream = new ValueStream(comparator);
-  compStream.preprocess((value) => {
-    if (typeof value !== 'function') throw new Error('comparator only accepts functions');
-    return value;
-  });
-  state.addStream('comparator', compStream);
-
-  const optionsFilterStream = new ValueStream(optionsFilter);
-  optionsFilterStream.preprocess((value) => {
-    if (typeof value !== 'function') throw new Error('comparator only accepts functions');
-    return value;
-  });
-  state.addStream('optionsFilter', optionsFilterStream);
-
-  const optionToChoiceStream = new ValueStream(optionToChoice);
-  optionToChoiceStream.preprocess((value) => {
-    if (typeof value !== 'function') throw new Error('comparator only accepts functions');
-    return value;
-  });
-  state.addStream('optionToChoice', optionToChoiceStream);
-
-  const optionToLabelStream = new ValueStream(optionToLabel);
-  optionToLabelStream.preprocess((value) => {
-    if (typeof value !== 'function') throw new Error('optionToLabel only accepts functions');
-    return value;
-  });
-  state.addStream('optionToLabel', optionToLabelStream);
-
-  if (props.listenForPointers) {
-    listenForPointers(state);
-    state.do.setListeningForTouch(true);
-  }
 
   return state;
 };
