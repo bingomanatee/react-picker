@@ -32,6 +32,14 @@ box or navigation.
 a menuItem; it recieves option, state and active as properties,
 and `optionToLabel(option)` as its children. It's passed `chooseOption(option)` as its onClick. 
 
+### EmptyMessage
+
+an optional component that displays when no options are available -- options are absent or an empty array.
+In the absence of this component a tag displays "no choices" in this situation.
+
+Options can be "empty" if the optionsFilter eliminates all options -- or, for instance,
+if the options are loading asynchroously. 
+
 ## The Picker Store
 
 The picker store is an instance of Looking Glass Engine; it has the following 

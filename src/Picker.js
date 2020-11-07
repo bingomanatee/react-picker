@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import ChoiceContainer from './ChoiceContainer';
+import ChoiceMenu from './ChoiceMenu';
+import ChoiceItem from './ChoiceItem';
 import ChoiceContext from './ChoiceContext';
+import EmptyMessage from './EmptyMessage';
 import choiceState from './choiceState';
 import StopEvents from './StopEvents';
 
-import * as defaultContainers from './containers';
 import Closer from './Closer';
 
 const Picker = (props) => {
@@ -20,8 +22,10 @@ const Picker = (props) => {
       props.onStore(newStore);
     }
     setStore(newStore);
-    const sub = newStore.subscribe(setValue, (err) => console.log('error:', err));
+    const sub = newStore.subscribe(setValue, (err) => console.log('picker store error:', err));
     let cSub;
+
+    // broadcast choices to the onChoices callbback if it exists
     if (props.onChoices) {
       cSub = newStore.watch('choices')
         .subscribe(({ choices }) => props.onChoices(choices));
@@ -35,6 +39,7 @@ const Picker = (props) => {
   },
   []);
 
+  // inject properties into store
   const {
     display, options, comparator, filterOptions,
   } = props;
@@ -66,21 +71,34 @@ const Picker = (props) => {
     }
   }, [filterOptions, store]);
 
-  const { ChoiceContainer, ChoiceMenu, ChoiceItem } = { ...defaultContainers, ...props };
+  // get the fundamental rendering blocks --
+  // or if not provided by props, the default stock tags provided by react-picker
+  const {
+    ChoiceContainer: Container, ChoiceMenu: Menu, ChoiceItem: Item, EmptyMessage: Empty,
+  } = {
+    ChoiceItem, ChoiceMenu, ChoiceContainer, EmptyMessage, ...props,
+  };
 
   if (!(store && value)) {
     return '';
   }
+
+  const inner = (store) => {
+    if (!store.my.display) return '';
+    return store.my.closeOnClick ? (
+      <Closer store={store}>
+        <Container Item={Item} ChoiceMenu={Menu} EmptyMessage={Empty} />
+      </Closer>
+    )
+      : (
+        <Container Item={Item} ChoiceMenu={Menu} EmptyMessage={Empty} />
+      );
+  };
   return (
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
         {(typeof props.children === 'function') ? props.children({ value, store }) : props.children}
-        {store.my.closeOnClick ? (
-          <Closer onClose={() => store.do.setDisplay(false)}>
-            <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />
-          </Closer>
-        )
-          : <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />}
+        {inner(store, value)}
       </StopEvents>
     </ChoiceContext.Provider>
   );
@@ -90,6 +108,7 @@ Picker.propTypes = {
   ChoiceContainer: PropTypes.elementType,
   ChoiceItem: PropTypes.elementType,
   ChoiceMenu: PropTypes.elementType,
+  EmptyMessage: PropTypes.elementType,
   options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
     label: PropTypes.string,
   })])),
@@ -112,9 +131,8 @@ Picker.defaultProps = {
   closeOnClick: false,
   display: false,
   chooseOne: false,
-  onStore: NOOP,
-  onChoices: NOOP,
-  filterOptions: NOOP,
+  onStore: null,
+  onChoices: null,
 };
 
 export default Picker;

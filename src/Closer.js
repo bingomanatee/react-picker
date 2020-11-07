@@ -1,10 +1,17 @@
 import React, { useEffect, useCallback, useRef } from 'react';
 
-export default ({ onClose, children }) => {
+export default ({ store, children }) => {
   const ref = useRef(null);
+
+  const close = useCallback(() => {
+    if (store.my.display) {
+      store.do.setDisplay(false);
+    }
+  });
+
   const escapeListener = useCallback((e) => {
     if (e.key === 'Escape') {
-      onClose && onClose();
+      close();
     }
   }, []);
   const clickListener = useCallback(
@@ -18,27 +25,29 @@ export default ({ onClose, children }) => {
           if (target.dataset && target.dataset.closer) return;
           target = target.parentNode || target.parent;
         }
-        if (typeof onClose === 'function') {
-          onClose();
-        }
+
+        close();
       }
     },
     [ref.current],
   );
   // Below is the 10 lines of code you need.
   useEffect(() => {
-    // Attach the listeners on component mount.
-    document.addEventListener('click', clickListener);
-    document.addEventListener('keyup', escapeListener);
-    // Detach the listeners on component unmount.
+    setTimeout(() => {
+      // Attach the listeners on component mount.
+      document.addEventListener('click', clickListener);
+      document.addEventListener('keyup', escapeListener);
+      // Detach the listeners on component unmount.
+    }, 500);
     return () => {
       document.removeEventListener('click', clickListener);
       document.removeEventListener('keyup', escapeListener);
     };
   }, []);
+
   return (
     <div
-      dataCloser
+      data-closer
       ref={ref}
     >
       {children}

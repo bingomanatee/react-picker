@@ -11,10 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ChoiceItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChoiceMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EmptyMessage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Closer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Closer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,29 +42,37 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/ChoiceItem.js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,7 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603163827539</updated>
-      <workItem from="1604765054973" duration="1236000" />
+      <workItem from="1604765054973" duration="7375000" />
+      <workItem from="1604773121567" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -213,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604765759068</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed closer">
+      <created>1604766339574</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1604766339574</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +282,8 @@
     <MESSAGE value="added structure diagram" />
     <MESSAGE value="refactored clickOutside" />
     <MESSAGE value="update to docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to docs" />
+    <MESSAGE value="fixed closer" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed closer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
@@ -271,15 +295,19 @@
     </state>
     <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
     <state x="1069" y="481" key="Vcs.Push.Dialog.v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604765817308" />
-    <state x="1223" y="514" width="890" height="802" key="find.popup" timestamp="1604765334928">
+    <state x="1223" y="514" width="890" height="802" key="find.popup" timestamp="1604772710624">
       <screen x="0" y="23" width="3008" height="1589" />
     </state>
     <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603798119459" />
-    <state x="1223" y="514" width="890" height="802" key="find.popup/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604765334928" />
+    <state x="1223" y="514" width="890" height="802" key="find.popup/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604772710624" />
     <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603253628180">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603253628180" />
+    <state x="357" y="353" key="new project wizard" timestamp="1604766721293">
+      <screen x="0" y="23" width="3008" height="1589" />
+    </state>
+    <state x="357" y="353" key="new project wizard/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604766721293" />
     <state x="1212" y="375" width="838" height="1032" key="search.everywhere.popup" timestamp="1603247148499">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
