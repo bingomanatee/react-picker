@@ -12,16 +12,18 @@ export default ({ onClose, children }) => {
       if (!ref.current) return;
 
       if (!(ref.current.contains(e.target))) {
-        let target = e.target;
+        let { target } = e;
         while (target) {
           if (target.nodeName === 'svg') return;
           if (target.dataset && target.dataset.closer) return;
           target = target.parentNode || target.parent;
         }
-        onClose && onClose(); // using optional chaining here, change to onClose && onClose(), if required
+        if (typeof onClose === 'function') {
+          onClose();
+        }
       }
     },
-    [ref.current]
+    [ref.current],
   );
   // Below is the 10 lines of code you need.
   useEffect(() => {
@@ -37,7 +39,7 @@ export default ({ onClose, children }) => {
   return (
     <div
       dataCloser
-      ref={ ref }
+      ref={ref}
     >
       {children}
     </div>

@@ -8,7 +8,7 @@ import choiceState from './choiceState';
 import StopEvents from './StopEvents';
 
 import * as defaultContainers from './containers';
-import Closer from "./Closer";
+import Closer from './Closer';
 
 const Picker = (props) => {
   const [store, setStore] = useState(false);
@@ -75,7 +75,11 @@ const Picker = (props) => {
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
         {(typeof props.children === 'function') ? props.children({ value, store }) : props.children}
-        {store.my.closeOnClick ? <Closer><ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} /></Closer>
+        {store.my.closeOnClick ? (
+          <Closer onClose={() => store.do.setDisplay(false)}>
+            <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />
+          </Closer>
+        )
           : <ChoiceContainer Item={ChoiceItem} ChoiceMenu={ChoiceMenu} />}
       </StopEvents>
     </ChoiceContext.Provider>
@@ -98,12 +102,19 @@ Picker.propTypes = {
   optionToLabel: PropTypes.func,
   optionToChoice: PropTypes.func,
   children: PropTypes.any,
-  closeOnClick: PropTypes.bool
+  closeOnClick: PropTypes.bool,
 };
+
+const NOOP = (prop) => prop;
 
 Picker.defaultProps = {
   options: [],
   closeOnClick: false,
+  display: false,
+  chooseOne: false,
+  onStore: NOOP,
+  onChoices: NOOP,
+  filterOptions: NOOP,
 };
 
 export default Picker;
