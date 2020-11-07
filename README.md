@@ -50,6 +50,7 @@ store.my.comprator {function} determines if a choice is equivalent to a given op
 store.my.filterOptions {function} returns options in a new array
 store.my.optionsToChoice {function} converts an option to a storeable choice
 store.my.optionsToLabel {function} converts an option to a displayable entity
+store.my.closeOnClick {boolean} if true, close when the user clicks outside the ChoiceContainer
 ```
 
 each `my` item has a pass-through function -- `do.setOptions`, `do.setChoices`, etc. 

@@ -10,12 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icons/checkSymbols.sketch" beforeDir="false" afterPath="$PROJECT_DIR$/icons/checkSymbols.sketch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure.svg" beforeDir="false" afterPath="$PROJECT_DIR$/structure.svg" afterDir="false" />
-    </list>
+    <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,6 +48,19 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,6 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603163827539</updated>
+      <workItem from="1604765054973" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -187,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603825436409</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactored clickOutside">
+      <created>1604765591244</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1604765591244</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,21 +248,24 @@
     <MESSAGE value="work on docs" />
     <MESSAGE value="updated icons" />
     <MESSAGE value="added structure diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="added structure diagram" />
+    <MESSAGE value="refactored clickOutside" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored clickOutside" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1258" y="640" key="Github.ShareDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603302640400" />
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2" timestamp="1603825440853">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1604765670493">
+      <screen x="0" y="23" width="3008" height="1589" />
     </state>
     <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
-    <state x="1041" y="461" width="738" height="586" key="find.popup" timestamp="1603798119459">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604765670493" />
+    <state x="1223" y="514" width="890" height="802" key="find.popup" timestamp="1604765334928">
+      <screen x="0" y="23" width="3008" height="1589" />
     </state>
     <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603798119459" />
+    <state x="1223" y="514" width="890" height="802" key="find.popup/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604765334928" />
     <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603253628180">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
