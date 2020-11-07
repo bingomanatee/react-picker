@@ -87,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603163827539</updated>
       <workItem from="1604765054973" duration="7375000" />
-      <workItem from="1604773121567" duration="676000" />
+      <workItem from="1604773121567" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604766339574</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="work on Empty messaging; adding demo">
+      <created>1604773959473</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1604773959473</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +290,8 @@
     <MESSAGE value="refactored clickOutside" />
     <MESSAGE value="update to docs" />
     <MESSAGE value="fixed closer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed closer" />
+    <MESSAGE value="work on Empty messaging; adding demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on Empty messaging; adding demo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
