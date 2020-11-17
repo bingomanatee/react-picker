@@ -131,12 +131,12 @@ const Picker = (props) => {
 };
 
 Picker.propTypes = {
-  Header: PropTypes.elementType,
-  Footer: PropTypes.elementType,
-  ChoiceContainer: PropTypes.elementType,
-  ChoiceItem: PropTypes.elementType,
-  ChoiceMenu: PropTypes.elementType,
-  EmptyMessage: PropTypes.elementType,
+  Header: PropTypes.any,
+  Footer: PropTypes.any,
+  ChoiceContainer: PropTypes.any,
+  ChoiceItem: PropTypes.any,
+  ChoiceMenu: PropTypes.any,
+  EmptyMessage: PropTypes.any,
   options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
     label: PropTypes.string,
   })])),

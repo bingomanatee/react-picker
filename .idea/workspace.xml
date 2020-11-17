@@ -11,12 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Void.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChoiceContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StopEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/StopEvents.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +55,6 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,7 +66,8 @@
       <workItem from="1604765054973" duration="7375000" />
       <workItem from="1604773121567" duration="1149000" />
       <workItem from="1604774302851" duration="1608000" />
-      <workItem from="1605553553463" duration="3326000" />
+      <workItem from="1605553553463" duration="5230000" />
+      <workItem from="1605643688883" duration="454000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -276,7 +258,28 @@
       <option name="project" value="LOCAL" />
       <updated>1604775313323</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Adding header and footer to picker for peer markup">
+      <created>1605636025666</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1605636025666</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Adding header and footer to picker for peer markup">
+      <created>1605636182163</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1605636182163</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fixed version error in CHANGELOG.md">
+      <created>1605636212328</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1605636212328</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +333,9 @@
     <MESSAGE value="rel 1.0.26; adding demo" />
     <MESSAGE value="tweaked demo css" />
     <MESSAGE value="fixed workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed workspace.xml" />
+    <MESSAGE value="Adding header and footer to picker for peer markup" />
+    <MESSAGE value="fixed version error in CHANGELOG.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed version error in CHANGELOG.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
@@ -341,9 +346,10 @@
       <screen x="0" y="23" width="3008" height="1589" />
     </state>
     <state x="1184" y="281" key="SettingsEditor/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605553587086" />
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1604775265757">
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1605636251330">
       <screen x="0" y="23" width="3008" height="1589" />
     </state>
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605636251330" />
     <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
     <state x="1069" y="481" key="Vcs.Push.Dialog.v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604775265757" />
     <state x="1556" y="731" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604774278326">
