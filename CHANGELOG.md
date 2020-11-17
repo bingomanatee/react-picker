@@ -11,3 +11,7 @@ tuning and evaluating intial version
 * allowing optionFiltering, optionToChoice for greater
   flexibility
 * allowing for auto-closing when click outside
+
+### 1.0.26
+
+Added header, footer for peer decoration
