@@ -12,6 +12,6 @@ tuning and evaluating intial version
   flexibility
 * allowing for auto-closing when click outside
 
-### 1.0.26
+### 1.0.27
 
 Added header, footer for peer decoration
