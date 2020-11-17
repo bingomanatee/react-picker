@@ -9,8 +9,29 @@ import ChoiceContext from './ChoiceContext';
 import EmptyMessage from './EmptyMessage';
 import choiceState from './choiceState';
 import StopEvents from './StopEvents';
-
+import Void from './Void';
 import Closer from './Closer';
+
+const asLabel = (item) => {
+  if (item === null) return 'Null';
+  if (typeof item === 'object') {
+    return 'label,name,value,id'.split(',')
+      .reduce((label, field) => {
+        if (label) return label;
+        if (field in item) return item[field];
+        return label;
+      }, '') || 'Unlabelled';
+  }
+  return `${item}`;
+};
+
+const asChoice = (item) => {
+  if (item === null) return null;
+  if (typeof item === 'object') {
+    return { ...item };
+  }
+  return item;
+};
 
 const Picker = (props) => {
   const [store, setStore] = useState(false);
@@ -39,11 +60,14 @@ const Picker = (props) => {
   },
   []);
 
-  // inject properties into store
   const {
-    display, options, comparator, filterOptions,
+    display, options, comparator, filterOptions, Header, Footer,
   } = props;
 
+  /**
+   * These effects synchronize any updating of settings passed in from properties
+   * into the store instasnce
+   */
   useEffect(() => {
     if (!store) return;
     if ('display' in props) {
@@ -97,14 +121,18 @@ const Picker = (props) => {
   return (
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
+        <Header store={store} value={value} />
         {(typeof props.children === 'function') ? props.children({ value, store }) : props.children}
         {inner(store, value)}
+        <Footer store={store} value={value} />
       </StopEvents>
     </ChoiceContext.Provider>
   );
 };
 
 Picker.propTypes = {
+  Header: PropTypes.elementType,
+  Footer: PropTypes.elementType,
   ChoiceContainer: PropTypes.elementType,
   ChoiceItem: PropTypes.elementType,
   ChoiceMenu: PropTypes.elementType,
@@ -127,8 +155,14 @@ Picker.propTypes = {
 const NOOP = (prop) => prop;
 
 Picker.defaultProps = {
+  Header: Void,
+  Footer: Void,
+  ChoiceContainer,
+  ChoiceMenu,
+  ChoiceItem,
+  EmptyMessage,
   options: [],
-  closeOnClick: false,
+  closeOnClick: true,
   display: false,
   chooseOne: false,
   onStore: null,
