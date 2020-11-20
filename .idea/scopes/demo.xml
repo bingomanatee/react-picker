@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="demo" pattern="file[picker]:demo//*" />
+</component>
