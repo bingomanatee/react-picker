@@ -2,15 +2,24 @@
 
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import ChoiceContainer from './ChoiceContainer';
-import ChoiceMenu from './ChoiceMenu';
-import ChoiceItem from './ChoiceItem';
+import Container from './ChoiceContainer';
+import Menu from './ChoiceMenu';
+import Item from './ChoiceItem';
 import ChoiceContext from './ChoiceContext';
-import EmptyMessage from './EmptyMessage';
+import Empty from './EmptyMessage';
 import choiceState from './choiceState';
 import StopEvents from './StopEvents';
 import Void from './Void';
 import Closer from './Closer';
+
+const defaultComponents = {
+  ChoiceItem: Item,
+  ChoiceMenu: Menu,
+  EmptyMessage: Empty,
+  ChoiceContainer: Container,
+  Header: Void,
+  Footer: Void,
+};
 
 const asLabel = (item) => {
   if (item === null) return 'Null';
@@ -61,7 +70,7 @@ const Picker = (props) => {
   []);
 
   const {
-    display, options, comparator, filterOptions, Header, Footer,
+    display, options, comparator, filterOptions, optionDisabled,
   } = props;
 
   /**
@@ -77,6 +86,11 @@ const Picker = (props) => {
     }
   }, [display, store]);
 
+  /**
+   * @TODO: reset custom functions to default if properties change
+   * from a passed-in parameter to absent or invalid parameter
+   */
+
   useEffect(() => {
     if (store && Array.isArray(props.options)) {
       store.do.setOptions(props.options);
@@ -90,6 +104,12 @@ const Picker = (props) => {
   }, [comparator, store]);
 
   useEffect(() => {
+    if (store && (typeof optionDisabled === 'function')) {
+      store.do.setOptionDisabled(optionDisabled);
+    }
+  }, [optionDisabled, store]);
+
+  useEffect(() => {
     if (store && (typeof filterOptions === 'function')) {
       store.do.setFilterOptions(filterOptions);
     }
@@ -98,9 +118,10 @@ const Picker = (props) => {
   // get the fundamental rendering blocks --
   // or if not provided by props, the default stock tags provided by react-picker
   const {
-    ChoiceContainer: Container, ChoiceMenu: Menu, ChoiceItem: Item, EmptyMessage: Empty,
+    ChoiceContainer, ChoiceMenu, ChoiceItem, EmptyMessage,
+    Header, Footer,
   } = {
-    ChoiceItem, ChoiceMenu, ChoiceContainer, EmptyMessage, ...props,
+    ...defaultComponents, ...props,
   };
 
   if (!(store && value)) {
@@ -111,20 +132,20 @@ const Picker = (props) => {
     if (!store.my.display) return '';
     return store.my.closeOnClick ? (
       <Closer store={store}>
-        <Container Item={Item} ChoiceMenu={Menu} EmptyMessage={Empty} />
+        <ChoiceContainer ChoiceItem={ChoiceItem} ChoiceMenu={ChoiceMenu} EmptyMessage={EmptyMessage} />
       </Closer>
     )
       : (
-        <Container Item={Item} ChoiceMenu={Menu} EmptyMessage={Empty} />
+        <ChoiceContainer ChoiceItem={ChoiceItem} ChoiceMenu={ChoiceMenu} EmptyMessage={EmptyMessage} />
       );
   };
   return (
     <ChoiceContext.Provider value={{ value, store }}>
       <StopEvents>
-        <Header store={store} value={value} />
+        {Header ? <Header store={store} value={value} /> : ''}
         {(typeof props.children === 'function') ? props.children({ value, store }) : props.children}
         {inner(store, value)}
-        <Footer store={store} value={value} />
+        {Footer ? <Footer store={store} value={value} /> : ''}
       </StopEvents>
     </ChoiceContext.Provider>
   );
@@ -140,33 +161,27 @@ Picker.propTypes = {
   options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
     label: PropTypes.string,
   })])),
-  onChoices: PropTypes.func,
-  onStore: PropTypes.func,
   display: PropTypes.bool,
+  closeOnClick: PropTypes.bool,
   chooseOne: PropTypes.bool,
   filterOptions: PropTypes.func,
   comparator: PropTypes.func,
   optionToLabel: PropTypes.func,
   optionToChoice: PropTypes.func,
+  onChoices: PropTypes.func,
+  onStore: PropTypes.func,
   children: PropTypes.any,
-  closeOnClick: PropTypes.bool,
 };
 
-const NOOP = (prop) => prop;
-
 Picker.defaultProps = {
-  Header: Void,
-  Footer: Void,
-  ChoiceContainer,
-  ChoiceMenu,
-  ChoiceItem,
-  EmptyMessage,
   options: [],
   closeOnClick: true,
   display: false,
   chooseOne: false,
   onStore: null,
   onChoices: null,
+  optionToLabel: asLabel,
+  optionToChoice: asChoice,
 };
 
 export default Picker;

@@ -180,6 +180,7 @@ optionToLabel: converts an option to a displayable string or dom node set inside
 * **optionToChoice(option)**: if you want to store choices in a format different from the options, 
    for instance, by ID, define this function. 
 * **optionToLabel(option)**: a function to make the option displayable as a label. 
+* **optionDisabled(option):boolean**: a function that sets the disabled property of ChoiceItem
 
 ## Identity in the Picker Component choice vs options
 
@@ -247,3 +248,13 @@ This is a standard React Context that provides an object:
 ```
 
 value is a clone of `store.my`; see above for a catalog of its properties. 
+
+## Disabling an Option
+
+Disabling an option means you pass `disabled` to the ChoiceItem -- which (should) prevent the onClick from being fired
+for that particular option. disabling does **NOT:**
+
+*  prevent the option from being included as a choice
+*  affect how the toggle, addAll, remAll methods behave
+
+To do that you have to add a listener to the stores' 

@@ -14,4 +14,10 @@ tuning and evaluating intial version
 
 ### 1.0.27
 
-Added header, footer for peer decoration
+Added header, footer for peer decoration. NOTE: updates nicely
+when local state is updated -- not so well when remote/upstream state or context
+is updated. 
+
+### 1.0.33 
+
+Added disabled property to allow for freezing certain elements' UI. 

@@ -10,6 +10,10 @@ const defaultOptionToLabel = (option) => {
   return `${option}`;
 };
 
+const defaultOptionToChoice = (option) => option;
+const defaultOptionsFilter = (list) => ([...list]);
+const defaultOptionDisabled = () => false;
+
 const f = (target, name, defaultValue) => {
   if (target && (typeof target[name] === 'function')) {
     return target[name];
@@ -18,20 +22,24 @@ const f = (target, name, defaultValue) => {
 };
 
 export default (props = {}) => {
-  const optionsFilter = f(props, 'optionsFilter', (list) => ([...list]));
-  const optionToChoice = f(props, 'optionToChoice', (option) => option);
+  const optionsFilter = f(props, 'optionsFilter', defaultOptionsFilter);
+  const optionToChoice = f(props, 'optionToChoice', defaultOptionToChoice);
   const comparator = f(props, 'comparator', isEqual);
   const optionToLabel = f(props, 'optionToLabel', defaultOptionToLabel);
+  const optionDisabled = f(props, 'optionDisabled', defaultOptionDisabled);
+  const options = props.options || [];
+  const choices = props.choices || [];
 
   const state = new ValueStoreObject({
-    options: props.options || [], // entire population
-    choices: props.choices || [], // chosen items
+    options, // entire population
+    choices, // chosen items
     display: !!props.display,
     chooseOne: !!props.chooseOne,
     comparator,
     optionsFilter,
     optionToChoice,
     optionToLabel,
+    optionDisabled,
     closeOnClick: !!props.closeOnClick,
   }, {
     actions: {
@@ -89,6 +97,9 @@ export default (props = {}) => {
       },
     },
   });
+
+  state.addStream('options', new ValueStream(options))
+    .addStream('choices', new ValueStream(choices));
 
   return state;
 };

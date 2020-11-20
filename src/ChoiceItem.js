@@ -6,7 +6,7 @@ import {
 } from './icons';
 
 const ChoiceItem = ({
-  active, children, onClick,
+  active, children, onClick, disabled,
 }) => {
   let Icon;
   const { store } = useContext(ChoiceContext);
@@ -22,7 +22,13 @@ const ChoiceItem = ({
     Icon = CheckOff;
   }
   return (
-    <div className="picker__item" active={active} onClick={onClick}>
+    <div
+      className="picker__item"
+      active={active}
+      onClick={(...args) => {
+        if (!disabled) onClick(...args);
+      }}
+    >
       <Icon />
       <label>{children}</label>
     </div>
@@ -32,11 +38,13 @@ const ChoiceItem = ({
 ChoiceItem.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.any,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 ChoiceItem.defaultProps = {
   active: false,
+  disabled: false,
 };
 
 export default ChoiceItem;

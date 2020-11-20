@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ChoiceContext from './ChoiceContext';
@@ -5,7 +6,7 @@ import ChoiceItem from './ChoiceItem';
 import EmptyMessage from './EmptyMessage';
 import ChoiceMenu from './ChoiceMenu';
 
-const ChoiceContainer = ({ Item = ChoiceItem, Menu = ChoiceMenu, Empty = EmptyMessage() }) => {
+const ChoiceContainer = ({ ChoiceItem = ChoiceItem, ChoiceMenu = ChoiceMenu, EmptyMessage = EmptyMessage() }) => {
   const { value, store } = useContext(ChoiceContext);
 
   if (!value) return '';
@@ -19,9 +20,9 @@ const ChoiceContainer = ({ Item = ChoiceItem, Menu = ChoiceMenu, Empty = EmptyMe
 
   if (!(displayedOptions && displayedOptions.length)) {
     return (
-      <Menu>
-        <Empty onClick={() => store.do.setDisplay(false)}>No Choices</Empty>
-      </Menu>
+      <ChoiceMenu>
+        <EmptyMessage onClick={() => store.do.setDisplay(false)}>No Choices</EmptyMessage>
+      </ChoiceMenu>
     );
   }
 
@@ -31,15 +32,16 @@ const ChoiceContainer = ({ Item = ChoiceItem, Menu = ChoiceMenu, Empty = EmptyMe
         const active = value.choices.some((choice) => store.my.comparator(choice, option));
         const label = store.my.optionToLabel(option, i, store);
         return (
-          <Item
+          <ChoiceItem
             key={`${label}_${i}`}
             store={store}
             active={active}
             option={option}
+            disabled={store.my.optionDisabled(option, i, store)}
             onClick={() => store.do.chooseOption(option)}
           >
             {store.my.optionToLabel(option, i, store)}
-          </Item>
+          </ChoiceItem>
         );
       })}
     </ChoiceMenu>
@@ -47,15 +49,15 @@ const ChoiceContainer = ({ Item = ChoiceItem, Menu = ChoiceMenu, Empty = EmptyMe
 };
 
 ChoiceContainer.propTypes = {
-  Item: PropTypes.elementType,
-  Empty: PropTypes.elementType,
-  Menu: PropTypes.elementType,
+  ChoiceItem: PropTypes.any,
+  ChoiceMenu: PropTypes.any,
+  EmptyMessage: PropTypes.any,
 };
 
 ChoiceContainer.defaultProps = {
-  Item: ChoiceItem,
-  Empty: EmptyMessage,
-  Menu: ChoiceMenu,
+  ChoiceItem,
+  EmptyMessage,
+  ChoiceMenu,
 };
 
 export default ChoiceContainer;
