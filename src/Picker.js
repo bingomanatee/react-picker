@@ -168,6 +168,7 @@ Picker.propTypes = {
   comparator: PropTypes.func,
   optionToLabel: PropTypes.func,
   optionToChoice: PropTypes.func,
+  optionDisabled: PropTypes.func,
   onChoices: PropTypes.func,
   onStore: PropTypes.func,
   children: PropTypes.any,

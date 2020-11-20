@@ -25,12 +25,13 @@ const ChoiceItem = ({
     <div
       className="picker__item"
       active={active}
+      disabled={disabled}
       onClick={(...args) => {
         if (!disabled) onClick(...args);
       }}
     >
       <Icon />
-      <label>{children}</label>
+      <label disabled={disabled}>{children}</label>
     </div>
   );
 };

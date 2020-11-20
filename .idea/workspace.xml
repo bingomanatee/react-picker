@@ -12,14 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChoiceContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChoiceItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/choiceState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
       <workItem from="1604774302851" duration="1608000" />
       <workItem from="1605553553463" duration="5230000" />
       <workItem from="1605643688883" duration="2662000" />
-      <workItem from="1605902973375" duration="4752000" />
+      <workItem from="1605902973375" duration="5656000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -313,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605645244572</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Upgraded with disabled as option">
+      <created>1605908236893</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1605908236893</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +348,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/demo" />
     </ignored-roots>
-    <MESSAGE value="documentation of the Picker components; cleanup and prep for v1 release" />
     <MESSAGE value="instituted chooseOne mode." />
     <MESSAGE value="got rollup to play nice in React" />
     <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
@@ -370,7 +372,8 @@
     <MESSAGE value="Adding header and footer to picker for peer markup" />
     <MESSAGE value="fixed version error in CHANGELOG.md" />
     <MESSAGE value="being more flexible iwth propTypes" />
-    <option name="LAST_COMMIT_MESSAGE" value="being more flexible iwth propTypes" />
+    <MESSAGE value="Upgraded with disabled as option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgraded with disabled as option" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1580" y="622" width="617" height="559" key="#Scopes" timestamp="1605904622401">
@@ -385,10 +388,10 @@
       <screen x="0" y="23" width="3008" height="1589" />
     </state>
     <state x="1184" y="281" key="SettingsEditor/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605553587086" />
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1605823742358">
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1605908248957">
       <screen x="0" y="23" width="3008" height="1589" />
     </state>
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605823742357" />
+    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605908248957" />
     <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
     <state x="1069" y="481" key="Vcs.Push.Dialog.v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604775265757" />
     <state x="1556" y="731" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604774278326">
