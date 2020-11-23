@@ -3,10 +3,10 @@ import ChoiceContext from './ChoiceContext';
 import {
   CheckOff, CheckOn, RadioOff, RadioOn,
 } from './icons';
-import choiceState from './choiceState';
+import storeFactory from './storeFactory';
 import ChoiceItem from './ChoiceItem';
 import EmptyMessage from './EmptyMessage';
 
 export default {
-  Picker, ChoiceContext, CheckOn, CheckOff, RadioOn, RadioOff, choiceState, ChoiceItem, EmptyMessage,
+  Picker, ChoiceContext, CheckOn, CheckOff, RadioOn, RadioOff, storeFactory, ChoiceItem, EmptyMessage,
 };

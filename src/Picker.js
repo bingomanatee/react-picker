@@ -7,7 +7,7 @@ import Menu from './ChoiceMenu';
 import Item from './ChoiceItem';
 import ChoiceContext from './ChoiceContext';
 import Empty from './EmptyMessage';
-import choiceState from './choiceState';
+import storeFactory from './storeFactory';
 import StopEvents from './StopEvents';
 import Void from './Void';
 import Closer from './Closer';
@@ -47,7 +47,7 @@ const Picker = (props) => {
   const [value, setValue] = useState(null);
 
   useEffect(() => {
-    const newStore = choiceState(props);
+    const newStore = storeFactory(props);
     if (props.onStore) { // extend store
       props.onStore(newStore);
     }
@@ -152,15 +152,17 @@ const Picker = (props) => {
 };
 
 Picker.propTypes = {
+  // injected components
   Header: PropTypes.any,
   Footer: PropTypes.any,
   ChoiceContainer: PropTypes.any,
   ChoiceItem: PropTypes.any,
   ChoiceMenu: PropTypes.any,
   EmptyMessage: PropTypes.any,
-  options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-    label: PropTypes.string,
-  })])),
+
+  // store values
+  options: PropTypes.arrayOf(PropTypes.any),
+  choices: PropTypes.arrayOf(PropTypes.any), // used (if present) in storeFactory
   display: PropTypes.bool,
   closeOnClick: PropTypes.bool,
   chooseOne: PropTypes.bool,
@@ -169,8 +171,12 @@ Picker.propTypes = {
   optionToLabel: PropTypes.func,
   optionToChoice: PropTypes.func,
   optionDisabled: PropTypes.func,
+
+  // listeners
   onChoices: PropTypes.func,
   onStore: PropTypes.func,
+
+  // content
   children: PropTypes.any,
 };
 

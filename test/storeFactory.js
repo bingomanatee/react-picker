@@ -1,14 +1,14 @@
 /* eslint-disable camelcase */
 const tap = require('tap');
-const p = require('./../package.json');
+const p = require('../package.json');
 
-const { choiceState } = require('./../lib/index');
+const { storeFactory } = require('../lib/index');
 
 tap.test(p.name, (suite) => {
-  suite.test('choiceState', (cs) => {
+  suite.test('storeFactory', (cs) => {
     cs.test('multi-choice', (mc) => {
       mc.test('basic - string options', (bas) => {
-        const state = choiceState({ options: 'a,b,c,d,e'.split(',') });
+        const state = storeFactory({ options: 'a,b,c,d,e'.split(',') });
 
         bas.same(state.my.choices, []);
         state.do.chooseOption('a');
@@ -28,7 +28,7 @@ tap.test(p.name, (suite) => {
       });
 
       mc.test('basic - object options', (bao) => {
-        const state = choiceState({
+        const state = storeFactory({
           options: [
             { id: 1, name: 'Stan' },
             { id: 2, name: 'Kyle' },
@@ -64,7 +64,7 @@ tap.test(p.name, (suite) => {
     });
     cs.test('multi-choice by ID', (mc) => {
       mc.test('basic - object options', (bao) => {
-        const state = choiceState({
+        const state = storeFactory({
           options: [
             { id: 1, name: 'Stan' },
             { id: 2, name: 'Kyle' },

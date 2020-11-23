@@ -258,3 +258,15 @@ for that particular option. disabling does **NOT:**
 *  affect how the toggle, addAll, remAll methods behave
 
 To do that you have to add a listener to the stores' 
+
+## Curating Choices and Options
+
+Choices and Options are stored internally in a Looking Glass Engine stream;
+these streams can be accessed in `myStore.streams.get('choices')` and `myStore.streams.get('options')`
+respectively. https://www.npmjs.com/package/@wonderlandlabs/looking-glass-engine documents all the things you
+can do with the options and choices stream. Here is one example - 
+you can call `myStore.streams.get('choices').preprocesws((newChoices) => {// ... redurn other choices});`
+to alter, when choices are updated, which choices actually land. the demo folder has one example of this in action. 
+
+The options stream can also be preprocessed to remove duplicates or badly formed options, sort them, 
+or perform whatever other sanitization option you may want. 
