@@ -1,6 +1,6 @@
 {
   "name": "@wonderlandlabs/react-picker",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "A view-agnostic chooser",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,7 +19,7 @@
     "icons": "npx @svgr/cli -d src/icons icons"
   },
   "dependencies": {
-    "@wonderlandlabs/looking-glass-engine": "3.3.6",
+    "@wonderlandlabs/looking-glass-engine": "3.4.15",
     "lodash.isequal": "4.5.0"
   },
   "peerDependencies": {
