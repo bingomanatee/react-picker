@@ -12,12 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storeFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/choiceState.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/storeFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storeFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storeFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,6 +91,8 @@
       <workItem from="1605553553463" duration="5230000" />
       <workItem from="1605643688883" duration="2662000" />
       <workItem from="1605902973375" duration="8555000" />
+      <workItem from="1606153031756" duration="1788000" />
+      <workItem from="1613676900172" duration="2190000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -325,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605909011097</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md">
+      <created>1606153555140</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1606153555140</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +364,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/demo" />
     </ignored-roots>
-    <MESSAGE value="got rollup to play nice in React" />
     <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
     <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
     <MESSAGE value="fixed optionsFilter name error" />
@@ -382,49 +388,7 @@
     <MESSAGE value="being more flexible iwth propTypes" />
     <MESSAGE value="Upgraded with disabled as option" />
     <MESSAGE value="communicating disabled state to ChoiceItem;&#10;styling demo app to reflect disabled state" />
-    <option name="LAST_COMMIT_MESSAGE" value="communicating disabled state to ChoiceItem;&#10;styling demo app to reflect disabled state" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1580" y="622" width="617" height="559" key="#Scopes" timestamp="1605904622401">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1580" y="622" width="617" height="559" key="#Scopes/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605904622401" />
-    <state x="1258" y="640" key="Github.ShareDialog" timestamp="1603302640400">
-      <screen x="0" y="23" width="2560" height="1417" />
-    </state>
-    <state x="1258" y="640" key="Github.ShareDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603302640400" />
-    <state x="1184" y="281" key="SettingsEditor" timestamp="1605553587086">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1184" y="281" key="SettingsEditor/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605553587086" />
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2" timestamp="1605909013214">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605909013214" />
-    <state x="910" y="431" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1603825440853" />
-    <state x="1069" y="481" key="Vcs.Push.Dialog.v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604775265757" />
-    <state x="1556" y="731" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604774278326">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1556" y="731" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604774278326" />
-    <state x="1223" y="514" width="890" height="802" key="find.popup" timestamp="1605904860536">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1223" y="514" width="890" height="802" key="find.popup/-1792.551.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1605904860536" />
-    <state x="1041" y="461" width="738" height="586" key="find.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603798119459" />
-    <state x="1223" y="514" width="890" height="802" key="find.popup/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604772710624" />
-    <state x="1248" y="705" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1604775299371">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="1062" y="631" key="git4idea.remote.GitConfigureRemotesDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1603253628180" />
-    <state x="1248" y="705" key="git4idea.remote.GitConfigureRemotesDialog/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604775299371" />
-    <state x="357" y="353" key="new project wizard" timestamp="1604766721293">
-      <screen x="0" y="23" width="3008" height="1589" />
-    </state>
-    <state x="357" y="353" key="new project wizard/3008.23.1792.1097/0.23.3008.1589@0.23.3008.1589" timestamp="1604766721293" />
-    <state x="1212" y="375" width="838" height="1032" key="search.everywhere.popup" timestamp="1603247148499">
-      <screen x="0" y="23" width="2560" height="1417" />
-    </state>
-    <state x="1212" y="375" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1603247148499" />
+    <MESSAGE value="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md" />
   </component>
 </project>

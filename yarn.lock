@@ -1422,27 +1422,34 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wonderlandlabs/looking-glass-engine@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/looking-glass-engine/-/looking-glass-engine-3.3.6.tgz#75bf1f3d3bcd834d0f452030dd76e70ee68cf6c8"
-  integrity sha512-xwOleDHKG2f29SwtnrqdKp5SsPgtWBwSfpkrZEJnX4y0Je67gyREOsRmy2Sp745ymxe/PiXvcreW3JQbJi9fnQ==
+"@wonderlandlabs/inspector@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/inspector/-/inspector-1.0.4.tgz#6fdea4907be78a039c36d5486f2a9cfa0bd997d2"
+  integrity sha512-EuF+ZtfM4fcuGZoke8fulzBi1eCZBzxN258fnHkxnfOEuQQlfgdsF3UrfYYM7ectDjhcyWCymaUc/2moUYI8JQ==
   dependencies:
-    "@wonderlandlabs/propper" "3.0.2"
-    "@wonderlandlabs/validators" "^1.0.2"
-    lodash.isequal "^4.5.0"
-    rxjs "^6.5.5"
+    bottlejs "^1.7.1"
+    is "^3.2.1"
 
-"@wonderlandlabs/propper@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/propper/-/propper-3.0.2.tgz#cf227d0d3b0dadfa344d0a23335362591f0380f9"
-  integrity sha512-5W6BNAmyxsMC1jAy8KoJQ82yy5HF4ztwFphInC9rKYSW1d27mQkmh4RI2fJYQkel5ozzsJMZ2REisJh5ZR61Gw==
+"@wonderlandlabs/looking-glass-engine@3.4.15":
+  version "3.4.15"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/looking-glass-engine/-/looking-glass-engine-3.4.15.tgz#fcb914af89e9547a57968585ec511dc26cc3a340"
+  integrity sha512-N2Nh2JjFdMZhvbIRQbHA50IhJxbEky/QzDKnBbGh9/oG3XV+YDOjTFzIGCc6VX71yP5vhdqO9NT3Xm5tfJPtQQ==
   dependencies:
-    "@wonderlandlabs/validators" "1.0.2"
+    "@wonderlandlabs/propper" "^2.0.5"
+    babel-eslint "^10.0.3"
+    immer "^8.0.0"
+    lodash "^4.17.15"
+    rxjs "^6.6.3"
 
-"@wonderlandlabs/validators@1.0.2", "@wonderlandlabs/validators@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/validators/-/validators-1.0.2.tgz#27a6f801f82db6088ba1e18e8fdccadc1376226d"
-  integrity sha512-VnTRwLjNJCq66/8IOup6vJ9fjYz867PfBz4ib5tv1bdOf1a3mdAX0eFX8rL0fR8Gy4xqbUfPSQO3LpgiDSbwLQ==
+"@wonderlandlabs/propper@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/propper/-/propper-2.0.5.tgz#79dfa39b2174c2dc14c5b8310bbacb1596c9a41d"
+  integrity sha512-XjUgvl3T2LtAkbGWWqxZU6eokd+IRoKSzfFgruOHtFDp0rRidxmJ1pOiR3GsNOtg60Wl6ZvJZ1Q+ukJObN3JHg==
+  dependencies:
+    "@wonderlandlabs/inspector" "^1.0.4"
+    is "^3.2.1"
+    lodash.compact "^3.0.1"
+    lodash.get "^4.4.2"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -2619,6 +2626,11 @@ body@^5.1.0:
     error "^7.0.0"
     raw-body "~1.1.0"
     safe-json-parse "~1.0.1"
+
+bottlejs@^1.7.1:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/bottlejs/-/bottlejs-1.7.2.tgz#a9a29c937cda3c4b4dcbcfc71c473c7f79108ca6"
+  integrity sha512-voMPQ+g8/4GBiDE5lp43fgfoBn7Q5fZI7k3ye8ErrPoHzuuRS0Gff9lZYeyalh86uz5P304iZ14wNAM+3TZguQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -5577,6 +5589,11 @@ ignore@^4.0.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
+immer@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
+  integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
+
 import-fresh@^3.0.0, import-fresh@^3.1.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.2.2.tgz#fc129c160c5d68235507f4331a6baad186bdbc3e"
@@ -6059,6 +6076,11 @@ is-wsl@^1.1.0:
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
   integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
 
+is@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/is/-/is-3.3.0.tgz#61cff6dd3c4193db94a3d62582072b44e5645d79"
+  integrity sha512-nW24QBoPcFGGHJGUwnfpI7Yc5CdqWNdsyHQszVE/z2pKHXzh7FZ5GWhJqSyaQ9wMkQnsTx+kAI8bHlCX4tKdbg==
+
 isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
@@ -6460,6 +6482,11 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.compact@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.compact/-/lodash.compact-3.0.1.tgz#540ce3837745975807471e16b4a2ba21e7256ca5"
+  integrity sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=
+
 lodash.debounce@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-3.1.1.tgz#812211c378a94cc29d5aa4e3346cf0bfce3a7df5"
@@ -6472,7 +6499,12 @@ lodash.flattendeep@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   integrity sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
 
-lodash.isequal@4.5.0, lodash.isequal@^4.5.0:
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.isequal@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
@@ -8845,7 +8877,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.5.5, rxjs@^6.6.0:
+rxjs@^6.6.0, rxjs@^6.6.3:
   version "6.6.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
   integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
