@@ -6,7 +6,13 @@ import ChoiceItem from './ChoiceItem';
 import EmptyMessage from './EmptyMessage';
 import ChoiceMenu from './ChoiceMenu';
 
-const ChoiceContainer = ({ ChoiceItem = ChoiceItem, ChoiceMenu = ChoiceMenu, EmptyMessage = EmptyMessage() }) => {
+const ChoiceContainer = ({
+  ChoiceItem = ChoiceItem,
+  ChoiceMenu = ChoiceMenu,
+  EmptyMessage = EmptyMessage,
+  ChoiceItemIcon,
+  ChoiceItemLabel,
+}) => {
   const { value, store } = useContext(ChoiceContext);
 
   if (!value) return '';
@@ -27,7 +33,7 @@ const ChoiceContainer = ({ ChoiceItem = ChoiceItem, ChoiceMenu = ChoiceMenu, Emp
   }
 
   return (
-    <ChoiceMenu>
+    <ChoiceMenu displayedOptions={displayedOptions}>
       {displayedOptions.map((option, i) => {
         const active = value.choices.some((choice) => store.my.comparator(choice, option));
         const label = store.my.optionToLabel(option, i, store);
@@ -37,6 +43,8 @@ const ChoiceContainer = ({ ChoiceItem = ChoiceItem, ChoiceMenu = ChoiceMenu, Emp
             store={store}
             active={active}
             option={option}
+            ChoiceItemIcon={ChoiceItemIcon}
+            ChoiceItemLabel={ChoiceItemLabel}
             disabled={store.my.optionDisabled(option, i, store)}
             onClick={() => store.do.chooseOption(option)}
           >

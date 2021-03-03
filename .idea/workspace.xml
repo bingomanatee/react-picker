@@ -11,11 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DefaultChoiceItemIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefaultLabel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/defaultOptionToChoice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/defaultOptionToLabel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listenForPointers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listenForPointers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChoiceContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChoiceItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoiceItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Picker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +64,8 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/defaultOptionToChoice.js" />
+      <recent name="$PROJECT_DIR$/src/defaultOptionToLabel.js" />
       <recent name="$PROJECT_DIR$/src/ChoiceItem.js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -95,7 +103,7 @@
       <workItem from="1605902973375" duration="8555000" />
       <workItem from="1606153031756" duration="1788000" />
       <workItem from="1613676900172" duration="2396000" />
-      <workItem from="1614794967061" duration="2046000" />
+      <workItem from="1614794967061" duration="9898000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -342,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614103728289</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="updated pointer examples with latest code">
+      <created>1614798211852</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1614798211852</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +389,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/demo" />
     </ignored-roots>
-    <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
     <MESSAGE value="fixed optionsFilter name error" />
     <MESSAGE value="refactored events; being noisy for now" />
     <MESSAGE value="caps" />
@@ -399,6 +413,7 @@
     <MESSAGE value="communicating disabled state to ChoiceItem;&#10;styling demo app to reflect disabled state" />
     <MESSAGE value="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md" />
     <MESSAGE value="synchronized latest version" />
-    <option name="LAST_COMMIT_MESSAGE" value="synchronized latest version" />
+    <MESSAGE value="updated pointer examples with latest code" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated pointer examples with latest code" />
   </component>
 </project>

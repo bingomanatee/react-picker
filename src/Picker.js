@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Container from './ChoiceContainer';
 import Menu from './ChoiceMenu';
@@ -11,6 +11,8 @@ import storeFactory from './storeFactory';
 import StopEvents from './StopEvents';
 import Void from './Void';
 import Closer from './Closer';
+import asLabel from './defaultOptionToLabel';
+import asChoice from './defaultOptionToChoice';
 
 const defaultComponents = {
   ChoiceItem: Item,
@@ -19,27 +21,6 @@ const defaultComponents = {
   ChoiceContainer: Container,
   Header: Void,
   Footer: Void,
-};
-
-const asLabel = (item) => {
-  if (item === null) return 'Null';
-  if (typeof item === 'object') {
-    return 'label,name,value,id'.split(',')
-      .reduce((label, field) => {
-        if (label) return label;
-        if (field in item) return item[field];
-        return label;
-      }, '') || 'Unlabelled';
-  }
-  return `${item}`;
-};
-
-const asChoice = (item) => {
-  if (item === null) return null;
-  if (typeof item === 'object') {
-    return { ...item };
-  }
-  return item;
 };
 
 const Picker = (props) => {
@@ -118,7 +99,7 @@ const Picker = (props) => {
   // get the fundamental rendering blocks --
   // or if not provided by props, the default stock tags provided by react-picker
   const {
-    ChoiceContainer, ChoiceMenu, ChoiceItem, EmptyMessage,
+    ChoiceContainer, ChoiceMenu, ChoiceItem, EmptyMessage, ChoiceItemIcon, ChoiceItemLabel,
     Header, Footer,
   } = {
     ...defaultComponents, ...props,
@@ -132,11 +113,23 @@ const Picker = (props) => {
     if (!store.my.display) return '';
     return store.my.closeOnClick ? (
       <Closer store={store}>
-        <ChoiceContainer ChoiceItem={ChoiceItem} ChoiceMenu={ChoiceMenu} EmptyMessage={EmptyMessage} />
+        <ChoiceContainer
+          ChoiceItemIcon={ChoiceItemIcon}
+          ChoiceItemLabel={ChoiceItemLabel}
+          ChoiceItem={ChoiceItem}
+          ChoiceMenu={ChoiceMenu}
+          EmptyMessage={EmptyMessage}
+        />
       </Closer>
     )
       : (
-        <ChoiceContainer ChoiceItem={ChoiceItem} ChoiceMenu={ChoiceMenu} EmptyMessage={EmptyMessage} />
+        <ChoiceContainer
+          ChoiceItemIcon={ChoiceItemIcon}
+          ChoiceItemLabel={ChoiceItemLabel}
+          ChoiceItem={ChoiceItem}
+          ChoiceMenu={ChoiceMenu}
+          EmptyMessage={EmptyMessage}
+        />
       );
   };
   return (
@@ -157,6 +150,8 @@ Picker.propTypes = {
   Footer: PropTypes.any,
   ChoiceContainer: PropTypes.any,
   ChoiceItem: PropTypes.any,
+  ChoiceItemLabel: PropTypes.any,
+  ChoiceItemIcon: PropTypes.any,
   ChoiceMenu: PropTypes.any,
   EmptyMessage: PropTypes.any,
 

@@ -25,3 +25,8 @@ Added disabled property to allow for freezing certain elements' UI.
 ### 1.0.34
 
 renamed storeFactory to storeFactory; documented options/choices stream in README.md
+
+### 1.0.38
+
+Added injectible Label and Icon options to ChoiceItem. 
+Updated demo to use more current references to LGE. 

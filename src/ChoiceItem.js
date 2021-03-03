@@ -1,26 +1,23 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ChoiceContext from './ChoiceContext';
-import {
-  CheckOff, CheckOn, RadioOff, RadioOn,
-} from './icons';
+import DefaultLabel from './DefaultLabel';
+import DefaultChoiceItemIcon from './DefaultChoiceItemIcon';
 
 const ChoiceItem = ({
-  active, children, onClick, disabled,
+  active,
+  children,
+  onClick,
+  option,
+  disabled,
+  ChoiceItemIcon = DefaultChoiceItemIcon,
+  ChoiceItemLabel,
 }) => {
-  let Icon;
+  const Icon = ChoiceItemIcon;
+  const Label = ChoiceItemLabel || DefaultLabel;
   const { store } = useContext(ChoiceContext);
-  if (active) {
-    if (store.my.chooseOne) {
-      Icon = RadioOn;
-    } else {
-      Icon = CheckOn;
-    }
-  } else if (store.my.chooseOne) {
-    Icon = RadioOff;
-  } else {
-    Icon = CheckOff;
-  }
+  const { chooseOne } = store.my;
+
   return (
     <div
       className="picker__item"
@@ -30,22 +27,39 @@ const ChoiceItem = ({
         if (!disabled) onClick(...args);
       }}
     >
-      <Icon />
-      <label disabled={disabled}>{children}</label>
+      <Icon
+        chooseOne={chooseOne}
+        active={active}
+        disabled={disabled}
+        option={option}
+      />
+      <Label
+        active={active}
+        disabled={disabled}
+        option={option}
+      >
+        {children}
+      </Label>
     </div>
   );
 };
 
 ChoiceItem.propTypes = {
+  DefaultLabel: PropTypes.any,
+  DefaultIcon: PropTypes.any,
   active: PropTypes.bool,
   children: PropTypes.any,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
+  iconOn: PropTypes.any,
+  iconOff: PropTypes.any,
 };
 
 ChoiceItem.defaultProps = {
   active: false,
   disabled: false,
+  iconOn: null,
+  iconOff: null,
 };
 
 export default ChoiceItem;
