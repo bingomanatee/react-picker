@@ -12,10 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6440ca29-1ae8-4f41-898a-54bbb5a2c079" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storeFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storeFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listenForPointers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listenForPointers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +65,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,7 +94,8 @@
       <workItem from="1605643688883" duration="2662000" />
       <workItem from="1605902973375" duration="8555000" />
       <workItem from="1606153031756" duration="1788000" />
-      <workItem from="1613676900172" duration="2190000" />
+      <workItem from="1613676900172" duration="2396000" />
+      <workItem from="1614794967061" duration="2046000" />
     </task>
     <task id="LOCAL-00001" summary="documentation of the Picker components; cleanup and prep for v1 release">
       <created>1603254714598</created>
@@ -332,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606153555140</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="synchronized latest version">
+      <created>1614103728289</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1614103728289</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +374,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/demo" />
     </ignored-roots>
-    <MESSAGE value="adding testing; introduced options filtering/ optionsToChoice" />
     <MESSAGE value="added listenForPointers; stopping pointerDown events from percolating outside of Picker." />
     <MESSAGE value="fixed optionsFilter name error" />
     <MESSAGE value="refactored events; being noisy for now" />
@@ -389,6 +398,7 @@
     <MESSAGE value="Upgraded with disabled as option" />
     <MESSAGE value="communicating disabled state to ChoiceItem;&#10;styling demo app to reflect disabled state" />
     <MESSAGE value="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed storeFactory.js from choiceState.js&#10;simplified options &#10;added choices to Picker propTypes&#10;Documented options/chices stream customization in README.md" />
+    <MESSAGE value="synchronized latest version" />
+    <option name="LAST_COMMIT_MESSAGE" value="synchronized latest version" />
   </component>
 </project>
